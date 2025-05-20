@@ -3,14 +3,18 @@
     width: 1280px;
     height: 720px;
     background: #fff;
+    display: flex;
+    justify-content: center;
 }
 
 .hw {
-    min-width: 1140px;
+    max-width: 1140px;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 30px;
+    padding-top: 25px;
     
 
 }
@@ -20,6 +24,6 @@
     font-weight: 600;
     font-size: 22px;
     color: #000;
-    padding-left: 70px;
+    
     padding-top: 130px;
 }
