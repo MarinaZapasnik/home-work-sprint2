@@ -1,7 +1,6 @@
 {
   "name": "hws2",
-  "homepage": "https://MarinaZapasnik.github.io/home-work-sprint2"
-,
+  "homepage": "https://MarinaZapasnik.github.io/home-work-sprint2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
