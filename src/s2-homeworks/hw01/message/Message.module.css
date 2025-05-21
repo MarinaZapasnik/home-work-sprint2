@@ -1,6 +1,6 @@
 .message {
     min-width: 100%;
-    height: 80px;
+    min-height: 80px;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -23,6 +23,7 @@
 
 .text {
     max-width: 600px;
+    min-height: auto;
     overflow-wrap: break-word;
     position: relative;
     display: inline-block;
@@ -58,6 +59,12 @@
     font-weight: 400;
     font-size: 16px;
     color: #fff;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Обрезает выходящий текст */
+    word-wrap: break-word; /*  Разрешает перенос */
+    white-space: normal; /* Позволяет перенести строки */
+    
 }
 
 .time {

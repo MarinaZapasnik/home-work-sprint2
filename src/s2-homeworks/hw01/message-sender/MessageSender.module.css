@@ -1,9 +1,10 @@
 .sendForm {
     height: 40px;
-    width: 1060px;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     gap: 45px;
-    justify-content: center;
+    padding-bottom: 70px;
 }
 
 .textarea {
@@ -19,9 +20,8 @@
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
     opacity: 0.9;
-    padding-left: 25px;
-    
-
+    padding: 11px 25px;
+    overflow: hidden;
 }
 
 .button {
@@ -37,8 +37,16 @@
 }
 
 .button:hover {
-
+    background: #fff;
+    color: #06c;
+    border:2px solid #06c;
+    transform: scale(1.1); 
+    transition: all 0.2s ease-out;
 }
 .button:active {
-
+    background: #fff;
+    color: #06c;
+    border-color: #06c;
+    transform: scale(1); 
+    transition: all 0.2s ease-out;
 }
