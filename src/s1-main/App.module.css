@@ -2,6 +2,7 @@
     --header_height: 60px;
     background: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     
 }
