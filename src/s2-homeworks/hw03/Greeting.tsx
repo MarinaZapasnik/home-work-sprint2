@@ -2,14 +2,14 @@ import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    onBlur: any // need to fix any
-    onEnter: any // need to fix any
+    name: string // need to fix any
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>)=>void // need to fix any
+    addUser: (name: string) => void // need to fix any
+    onBlur: (e: ChangeEvent<HTMLElement>)=>void // need to fix any
+    onEnter: (e: KeyboardEvent<HTMLElement>)=>void // need to fix any
     error: any // need to fix any
-    totalUsers: any // need to fix any
-    lastUserName?: any // need to fix any
+    totalUsers: number // need to fix any
+    lastUserName?: string | null // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
@@ -53,7 +53,7 @@ const Greeting: React.FC<GreetingPropsType> = (
 
                 <button
                     id={'hw3-button'}
-                    onClick={addUser}
+                    onClick={() => addUser(name)}
                     className={s.button}
                     disabled={!name.trim()}
                 >
@@ -63,7 +63,7 @@ const Greeting: React.FC<GreetingPropsType> = (
 
             {lastUserName && (
                 <div className={s.greeting}>
-                    Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
+                    Привет, <span id={'hw3-last-user'}>{lastUserName}</span>!
                 </div>
             )}
         </div>
