@@ -1,9 +1,5 @@
 .input:focus {
-    /* border-radius: 3px;
-    padding: 5px 24px;
-    width: 167px;
-    height: 30px;
-    background: #0080ff; */
+    
     border: 1px solid #d1d1d1;
     border-radius: 5px;
     width: 372px;
@@ -12,25 +8,38 @@
 
 
 .input {
+    border: none;
+    outline: none;
     border: 1px solid #d1d1d1;
     border-radius: 5px;
     width: 372px;
     height: 36px;
-    padding: ;
 }
 
 .inputWrapper {
-   
+   display: flex;
+   flex-direction: column-reverse;
 }
 
 .superInput {
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    width: 372px;
+    height: 36px;
 }
 
 .errorInput {
+    border: 1px solid #cc1439;
+    
 }
 
 .errorInput:focus {
+    border: 1px solid #cc1439;
 }
 
 .error {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: #cc1439;
 }
