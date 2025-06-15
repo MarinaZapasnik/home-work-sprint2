@@ -10,6 +10,7 @@
     line-height: 143%;
     color: #fff;
     background: #06c;
+    cursor: pointer;
 }
 
 .disabled {
@@ -27,6 +28,8 @@
 }
 
 .default {
+    color: #fff;
+    background: #06c;
 
 }
 
@@ -65,4 +68,5 @@
 }
 
 .button:disabled {
+    opacity: 0.5;
 }
