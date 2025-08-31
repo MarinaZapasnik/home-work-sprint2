@@ -19,8 +19,11 @@ const HW6 = () => {
     }
     const restore = () => {
         // делают студенты
+        const valueFromLS: string = restoreState<string>('hw6-editable-span-value', '')
+        setValue(valueFromLS)
 
     }
+    
 
     return (
         <div id={'hw6'}>
