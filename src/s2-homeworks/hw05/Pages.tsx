@@ -1,9 +1,10 @@
 import React from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
-import Error404 from './pages/Error404'
-import PreJunior from './pages/PreJunior'
-import Junior from './pages/Junior'
-import JuniorPlus from './pages/JuniorPlus'
+import { Navigate, Route, Routes } from "react-router-dom"
+import Junior from "./pages/Junior"
+import JuniorPlus from "./pages/JuniorPlus"
+import Error404 from "./pages/Error404"
+import PreJunior from "./pages/PreJunior"
+
 
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',
@@ -31,6 +32,7 @@ function Pages() {
                 {/*<Route ...*/}
             </Routes>
         </div>
+        
     )
 }
 
