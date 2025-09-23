@@ -1,15 +1,23 @@
 .radio {
+    height: 24px;
+    width: 24px;
+    accent-color: black;
 }
 
-.radio::before {
-}
+.radio:checked {
+    accent-color: black;
 
-
-.radio:checked::before {
 }
 
 .label {
+    display: flex;
+    gap: 11px;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+    height: 115px;
+    min-width: 105px;
+    gap: 16px;
 }
