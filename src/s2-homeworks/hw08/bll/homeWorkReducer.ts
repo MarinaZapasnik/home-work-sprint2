@@ -25,7 +25,7 @@ export const homeWorkReducer = (
        // need to fix
     }
     case "check": {
-      return state.filter((el) => el.age >= 18);
+      return state.filter((el) => el.age >= 18).reverse();
 
        // need to fix
     }
