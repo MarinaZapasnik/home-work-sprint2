@@ -1,14 +1,51 @@
+.hw9 {
+    min-width: 1140px;
+    min-height: 372px;
+    padding: 0 70px 50px 70px;
+}
+
 .buttonsContainer {
+    padding-top: 27px;
+    display: flex;
+    gap: 21px;
+}
+
+.button {
+    border-radius: 3px;
+    padding: 5px 24px;
+    width: 82px;
+    height: 30px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    color: #fff;
 }
 
 .clock {
+    display: flex;
+    flex-direction: column;
+
+    width: 610px;
+    max-width: 610px;
+    padding-top: 35px;
 }
 
 .watch {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    color: #000;
 }
 
 .watch strong {
+    font-weight: 600;
 }
 
 .more {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    padding-top: 8px;
 }

@@ -42,7 +42,7 @@ function Clock() {
 
         const setActualDate = () => {
             setDate(new Date())
-            console.log(date);
+            
         }
         
         const timerId = window.setInterval(setActualDate, 1000)
@@ -108,18 +108,20 @@ function Clock() {
 
             <div className={s.buttonsContainer}>
                 <SuperButton
+                    className={s.button}
                     id={'hw9-button-start'}
                     disabled={isTimer} // пишут студенты // задизэйблить если таймер запущен
                     onClick={start}
                 >
-                    start
+                    Start
                 </SuperButton>
                 <SuperButton
+                    className={s.button}
                     id={'hw9-button-stop'}
                     disabled={!isTimer} // пишут студенты // задизэйблить если таймер не запущен
                     onClick={stop}
                 >
-                    stop
+                    Stop
                 </SuperButton>
             </div>
         </div>
