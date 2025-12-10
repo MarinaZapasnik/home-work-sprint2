@@ -13,11 +13,48 @@
     --background: #212A34;
 }
 
+body {
+    background-color: var(--background);
+    color: var(--color);
+}
+
 html {
     background-color: var(--background);
     color: var(--color);
 }
 
+.Homework {
+    height: 370px;
+    max-width: 1140px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--background);
+
+}
+
+.hw {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.text {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+}
+
 .select {
+    border: 1px solid #323232;
+border-radius: 2px;
+width: 171px;
+height: 36px;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+color: #000;
 
 }
