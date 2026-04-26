@@ -47,29 +47,33 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                const message = res.data.errorText + res.data.info
+                const message = res.data.errorText 
+                const infoText = res.data.info
                 //console.log(res)
                 setText(message)
-                
+                setInfo(infoText)
                 // дописать
 
             })
             .catch((e) => {
                 
                 setCode('')
+                setInfo('')
 
                 if (axios.isAxiosError(e)) {
                     
                     
                     const data = e.response?.data as Response
                     const status = e.response?.status                    
-                    const message = data ?  data.errorText + data.info : e.message + e.name
+                    const message = data ? data.errorText : e.message
+                    const infoText = data ? data.info : e.name
 
                     
                     if (status === 500) {
                         setImage(error500)
                         setCode('Код 500!')
                         setText(message)
+                        setInfo(infoText)
                         
                     }
                     
@@ -77,6 +81,7 @@ const HW13 = () => {
                         setImage(error400)
                         setCode('Код 400!')
                         setText(message)
+                        setInfo(infoText)
                         
                     }
 
@@ -84,6 +89,7 @@ const HW13 = () => {
                         setImage(errorUnknown)
                         setCode('Error!')
                         setText(message)
+                        setInfo(infoText)
                         
                     }
                     
@@ -93,7 +99,7 @@ const HW13 = () => {
 
             })
             .finally(() => {
-                setInfo('')
+                
                 setLoading(false)
             })
     }
