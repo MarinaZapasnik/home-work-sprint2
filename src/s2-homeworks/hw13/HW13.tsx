@@ -8,6 +8,15 @@ import error400 from './images/400.svg'
 import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
 
+
+type Response = {
+    errorText: string,
+    info: string,
+    yourBody: {
+        success?: boolean
+    },
+    yourQuery: {}
+}
 /*
 * 1 - дописать функцию send
 * 2 - дизэйблить кнопки пока идёт запрос
@@ -19,6 +28,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -30,18 +40,61 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
+        setLoading(true)
 
         axios
             .post(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
+                const message = res.data.errorText + res.data.info
+                //console.log(res)
+                setText(message)
+                
                 // дописать
 
             })
             .catch((e) => {
-                // дописать
+                
+                setCode('')
 
+                if (axios.isAxiosError(e)) {
+                    
+                    
+                    const data = e.response?.data as Response
+                    const status = e.response?.status                    
+                    const message = data ?  data.errorText + data.info : e.message + e.name
+
+                    
+                    if (status === 500) {
+                        setImage(error500)
+                        setCode('Код 500!')
+                        setText(message)
+                        
+                    }
+                    
+                    if (status === 400) {
+                        setImage(error400)
+                        setCode('Код 400!')
+                        setText(message)
+                        
+                    }
+
+                    if (status === 0) {
+                        setImage(errorUnknown)
+                        setCode('Error!')
+                        setText(message)
+                        
+                    }
+                    
+                }
+            
+                
+
+            })
+            .finally(() => {
+                setInfo('')
+                setLoading(false)
             })
     }
 
@@ -55,6 +108,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
+                        disabled={loading}
                         // дописать
 
                     >
@@ -64,6 +118,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={loading}
                         // дописать
 
                     >
@@ -73,6 +128,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        disabled={loading}
                         // дописать
 
                     >
@@ -82,6 +138,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        disabled={loading}
                         // дописать
 
                     >
