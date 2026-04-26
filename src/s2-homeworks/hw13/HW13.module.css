@@ -1,5 +1,22 @@
-.buttonsContainer {
+.Homework {
+    min-height: 472px;
+    max-width: 1140px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: var(--background);
+    margin-bottom: 50px;
+
 }
+
+.buttonsContainer {
+    display: flex;
+    gap: 25px;
+
+}
+
+
 
 .responseContainer {
 }
